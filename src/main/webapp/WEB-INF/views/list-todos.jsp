@@ -23,7 +23,7 @@
 
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/list-todo.do">To-Dos</a></li>
+			<li><a href="/list-todos.do">To-Dos</a></li>
 			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
 		</ul>
 
@@ -37,17 +37,14 @@
 		<h1>Welcome ${name}</h1>
 		<p>Your To-Dos:</p>
 		<ul>
-
 			<c:forEach var="todo" items="${todos}">
 				<li>${todo.key}: ${todo.value} &nbsp; &nbsp; <a
 					href="/delete-todo.do?id=${todo.key}">Delete</a></li>
 			</c:forEach>
 		</ul>
-
-		<form action="/add-todo.do" method="post">
-			New To-Do: <input type="text" name="name"> <input type="submit"
-				value="Add">
-		</form>
+		
+		<p><font color="red">${errorMessage}</font></p>
+		<a href="/add-todo.do">Add New To-Do</a>
 	</div>
 
 	<footer class="footer">

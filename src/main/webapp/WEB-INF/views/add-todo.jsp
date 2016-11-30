@@ -28,19 +28,15 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/login.do">Login</a></li>
+			<li><a href="/logout.do">Logout</a></li>
 		</ul>
 
 	</nav>
 
 	<div class="container">
-		<p>
-			<font color="red">${errorMessage}</font>
-		</p>
-		<form action="/login.do" method="post">
-			Name: <input type="text" name="name"> Password: <input
-				type="password" name="password"> <input type="submit"
-				value="Login">
+		<form action="/add-todo.do" method="post">
+			New To-Do: <input type="text" name="name"> <input type="submit"
+				value="Add">
 		</form>
 	</div>
 

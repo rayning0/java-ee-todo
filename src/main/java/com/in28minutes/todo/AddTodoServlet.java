@@ -14,6 +14,11 @@ public class AddTodoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private TodoService todoService = new TodoService();
     
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/views/add-todo.jsp").forward(request, response);
+    }
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
@@ -23,6 +28,6 @@ public class AddTodoServlet extends HttpServlet {
         }
         //hashCode is better ID, because it's same for same "name." Doesn't let you add duplicate Todos.
         request.setAttribute("todos", todoService.addTodo(id, name));
-        response.sendRedirect("/list-todo.do");
+        response.sendRedirect("/list-todos.do");
     }
 }

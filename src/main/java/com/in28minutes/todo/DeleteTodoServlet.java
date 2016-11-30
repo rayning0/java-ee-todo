@@ -18,6 +18,6 @@ public class DeleteTodoServlet extends HttpServlet {
 	        throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         todoService.deleteTodo(id);
-        response.sendRedirect("/list-todo.do");
+        response.sendRedirect("/list-todos.do");
 	}
 }
