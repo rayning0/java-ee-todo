@@ -19,12 +19,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 	    request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
-	    
-//		PrintWriter out = response.getWriter();
-//		out.println("<b>Dummy stuff</b><br>");
-//		out.println("Raymond");
-//	    request.setAttribute("name", request.getParameter("name"));
-//	    request.setAttribute("password", request.getParameter("password"));
 	}
 
     @Override
@@ -37,10 +31,7 @@ public class LoginServlet extends HttpServlet {
         
         if(isUserValid) {
             request.getSession().setAttribute("name", name);
-            response.sendRedirect("/todo.do");
-//            request.setAttribute("name", name);
-//            request.setAttribute("todos", todoService.retrieveTodos());
-//            request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+            response.sendRedirect("/list-todo.do");
         } else {
             request.setAttribute("errorMessage", "Invalid Credentials!");
             request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);

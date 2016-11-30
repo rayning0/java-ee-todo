@@ -44,7 +44,7 @@
 			</c:forEach>
 		</ul>
 
-		<form action="/todo.do" method="post">
+		<form action="/add-todo.do" method="post">
 			<input type="text" name="name"> <input type="submit"
 				value="Add">
 		</form>
