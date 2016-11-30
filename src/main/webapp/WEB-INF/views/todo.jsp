@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Todos</title>
+<title>To-Dos</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 
@@ -23,7 +23,7 @@
 
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/todo.do">Todos</a></li>
+			<li><a href="/list-todo.do">To-Dos</a></li>
 			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
 		</ul>
 
@@ -35,17 +35,17 @@
 
 	<div class="container">
 		<h1>Welcome ${name}</h1>
-		<p>Your Todos:</p>
+		<p>Your To-Dos:</p>
 		<ul>
 
 			<c:forEach var="todo" items="${todos}">
-				<li>${todo.key}:${todo.value} &nbsp; &nbsp; <a
+				<li>${todo.key}: ${todo.value} &nbsp; &nbsp; <a
 					href="/delete-todo.do?id=${todo.key}">Delete</a></li>
 			</c:forEach>
 		</ul>
 
 		<form action="/add-todo.do" method="post">
-			<input type="text" name="name"> <input type="submit"
+			New To-Do: <input type="text" name="name"> <input type="submit"
 				value="Add">
 		</form>
 	</div>

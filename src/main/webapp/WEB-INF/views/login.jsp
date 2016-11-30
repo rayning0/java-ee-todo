@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Todos</title>
+<title>To-Dos</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 
@@ -23,7 +23,7 @@
 
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/todo.do">Todos</a></li>
+			<li><a href="/list-todo.do">To-Dos</a></li>
 			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
 		</ul>
 

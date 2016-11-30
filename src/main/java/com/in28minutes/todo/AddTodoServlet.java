@@ -17,9 +17,11 @@ public class AddTodoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        
+        int id = name.hashCode();
+        if (id < 0) {
+            id *= -1;
+        }
         //hashCode is better ID, because it's same for same "name." Doesn't let you add duplicate Todos.
-        int id = name.hashCode(); 
         request.setAttribute("todos", todoService.addTodo(id, name));
         response.sendRedirect("/list-todo.do");
     }
