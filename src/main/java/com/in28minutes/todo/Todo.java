@@ -1,6 +1,6 @@
 package com.in28minutes.todo;
 
-// This class is NOT USED if todos is HashMap instead of ArrayList
+// This class is NOT USED if todos is HashMap/TreeMap instead of ArrayList
 
 public class Todo {
     private String name;
@@ -26,10 +26,10 @@ public class Todo {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Override
     public String toString() {
-        return id + ": " + name;
+        return "Todo [name=" + name + ", id=" + id + "]";
     }
 
     @Override
@@ -56,6 +56,5 @@ public class Todo {
         } else if (!name.equals(other.name))
             return false;
         return true;
-    }
-    
+    }    
 }

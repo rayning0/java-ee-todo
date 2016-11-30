@@ -35,8 +35,15 @@
 
 	<div class="container">
 		<form action="/add-todo.do" method="post">
-			New To-Do: <input type="text" name="name"> <input type="submit"
-				value="Add">
+			<fieldset class="form-group">
+				<label>Description:</label>
+				<input type="text" name="name" class="form-control"><br>
+			</fieldset>
+			<fieldset class="form-group">
+				<label>Category:</label>
+				<input type="text" name="category" class="form-control"><br>
+			</fieldset>
+			<input type="submit" class="btn btn-success" value="Add">
 		</form>
 	</div>
 
